@@ -4,19 +4,15 @@
   </head>
   <body>
     <div>
-      <h1><a href="">대창너무조아의 블로그</a></h1>
+      <h1><a href="/">대창너무조아의 블로그</a></h1>
     </div>
 
+    {% for post in posts %}
     <div>
-      <p>published: 10.04.2020, 15:03</p>
-      <h2><a href="">My first post</a></h2>
-      <p>대창은 너무 맛있어!!!</p>
+      <p>published: {{ post.published_date }}</p>
+      <h1><a href="">{{ post.title }}</a></h1>
+      <p>{{ post.text|linebreaksbr }}</p>
     </div>
-
-    <div>
-      <p>published: 10.04.2020, 15:04</p>
-      <h2><a href="">My second post</a></h2>
-      <p>하지만, 곱창도 맛있지...!</p>
-    </div>
+    {% endfor %}
   </body>
 </html>
